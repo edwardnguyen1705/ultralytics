@@ -1,5 +1,21 @@
 # YOLOv8 - MNN
 
+## ONN export
+
+```bash
+$ python examples/YOLOv8-MNN/export.py --weight yolov8n.pt --format onnx --imgsz 256 --half --simplify
+```
+
+## MNN export
+
+```bash
+$ python -m MNN.tools.mnnconvert -f ONNX --modelFile model.onnx --MNNModel model.mnn --bizCode yolov8n256 --optimizePrefer 2
+```
+
+```bash
+$ 
+```
+
 This project implements YOLOv8 using MNN.
 
 ## Installation
