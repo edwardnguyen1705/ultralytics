@@ -6,7 +6,7 @@ keywords: JupyterLab, What is JupyterLab, How to Use JupyterLab, JupyterLab How 
 
 # A Guide on How to Use JupyterLab to Train Your YOLOv8 Models
 
-Building deep learning models can be tough, especially when you don't have the right tools or environment to work with. If you are facing this issue, JupyterLab might be the right solution for you. JupyterLab is a user-friendly, web-based platform that makes coding more flexible and interactive. You can use it to handle big datasets, create complex models, and even collaborate with others, all in one place.
+Building [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models can be tough, especially when you don't have the right tools or environment to work with. If you are facing this issue, JupyterLab might be the right solution for you. JupyterLab is a user-friendly, web-based platform that makes coding more flexible and interactive. You can use it to handle big datasets, create complex models, and even collaborate with others, all in one place.
 
 You can use JupyterLab to [work on projects](../guides/steps-of-a-cv-project.md) related to [Ultralytics YOLOv8 models](https://github.com/ultralytics/ultralytics). JupyterLab is a great option for efficient model development and experimentation. It makes it easy to start experimenting with and [training YOLOv8 models](../modes/train.md) right from your computer. Let's dive deeper into JupyterLab, its key features, and how you can use it to train YOLOv8 models.
 
@@ -14,7 +14,7 @@ You can use JupyterLab to [work on projects](../guides/steps-of-a-cv-project.md)
 
 JupyterLab is an open-source web-based platform designed for working with Jupyter notebooks, code, and data. It's an upgrade from the traditional Jupyter Notebook interface that provides a more versatile and powerful user experience.
 
-JupyterLab allows you to work with notebooks, text editors, terminals, and other tools all in one place. Its flexible design lets you organize your workspace to fit your needs and makes it easier to perform tasks like data analysis, visualization, and machine learning. JupyterLab also supports real-time collaboration, making it ideal for team projects in research and data science.
+JupyterLab allows you to work with notebooks, text editors, terminals, and other tools all in one place. Its flexible design lets you organize your workspace to fit your needs and makes it easier to perform tasks like data analysis, visualization, and [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml). JupyterLab also supports real-time collaboration, making it ideal for team projects in research and data science.
 
 ## Key Features of JupyterLab
 
@@ -54,7 +54,7 @@ JupyterLab makes it easy to experiment with YOLOv8. To get started, follow these
 
 First, you need to install JupyterLab. Open your terminal and run the command:
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 
@@ -71,7 +71,7 @@ Next, download the [tutorial.ipynb](https://github.com/ultralytics/ultralytics/b
 
 Navigate to the directory where you saved the notebook file using your terminal. Then, run the following command to launch JupyterLab:
 
-!!! Example "Usage"
+!!! example "Usage"
 
     === "CLI"
 
@@ -81,13 +81,13 @@ Navigate to the directory where you saved the notebook file using your terminal.
 
 Once you've run this command, it will open JupyterLab in your default web browser, as shown below.
 
-![Image Showing How JupyterLab Opens On the Browser](https://github.com/user-attachments/assets/bac4b140-1d64-4034-b980-7c0721121ec2)
+![Image Showing How JupyterLab Opens On the Browser](https://github.com/ultralytics/docs/releases/download/0/jupyterlab-browser-launch.avif)
 
 ### Step 4: Start Experimenting
 
 In JupyterLab, open the tutorial.ipynb notebook. You can now start running the cells to explore and experiment with YOLOv8.
 
-![Image Showing Opened YOLOv8 Notebook in JupyterLab](https://github.com/user-attachments/assets/71fe86d8-1964-4cde-9f62-479dfa41c75b)
+![Image Showing Opened YOLOv8 Notebook in JupyterLab](https://github.com/ultralytics/docs/releases/download/0/opened-yolov8-notebook-jupyterlab.avif)
 
 JupyterLab's interactive environment allows you to modify code, visualize outputs, and document your findings all in one place. You can try out different configurations and understand how YOLOv8 works.
 
@@ -117,7 +117,7 @@ To train a YOLOv8 model using JupyterLab:
 
 1. Install JupyterLab and the Ultralytics package:
 
-    ```python
+    ```bash
     pip install jupyterlab ultralytics
     ```
 
@@ -138,7 +138,8 @@ To train a YOLOv8 model using JupyterLab:
     ```
 
 5. Visualize training results using JupyterLab's built-in plotting capabilities:
-    ```python
+
+    ```ipython
     %matplotlib inline
     from ultralytics.utils.plotting import plot_results
     plot_results(results)
@@ -157,7 +158,7 @@ JupyterLab offers several features that make it ideal for YOLOv8 projects:
 5. Markdown support: Document your YOLOv8 experiments and findings with rich text and images.
 6. Extension ecosystem: Enhance functionality with extensions for version control, [remote computing](google-colab.md), and more.
 
-These features allow for a seamless development experience when working with YOLOv8 models, from data preparation to model deployment.
+These features allow for a seamless development experience when working with YOLOv8 models, from data preparation to [model deployment](https://www.ultralytics.com/glossary/model-deployment).
 
 ### How can I optimize YOLOv8 model performance using JupyterLab?
 
@@ -187,7 +188,7 @@ To optimize YOLOv8 model performance in JupyterLab:
     plot_results(results.results_dict)
     ```
 
-4. Experiment with different model architectures and [export formats](../modes/export.md) to find the best balance of speed and accuracy for your specific use case.
+4. Experiment with different model architectures and [export formats](../modes/export.md) to find the best balance of speed and [accuracy](https://www.ultralytics.com/glossary/accuracy) for your specific use case.
 
 JupyterLab's interactive environment allows for quick iterations and real-time feedback, making it easier to optimize your YOLOv8 models efficiently.
 
@@ -198,7 +199,7 @@ When working with JupyterLab and YOLOv8, you might encounter some common issues.
 1. GPU memory issues:
 
     - Use `torch.cuda.empty_cache()` to clear GPU memory between runs.
-    - Adjust batch size or image size to fit your GPU memory.
+    - Adjust [batch size](https://www.ultralytics.com/glossary/batch-size) or image size to fit your GPU memory.
 
 2. Package conflicts:
 

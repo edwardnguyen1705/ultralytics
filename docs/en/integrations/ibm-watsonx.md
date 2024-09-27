@@ -12,13 +12,13 @@ You can train [Ultralytics YOLOv8 models](https://github.com/ultralytics/ultraly
 
 ## What is IBM Watsonx?
 
-[Watsonx](https://www.ibm.com/watsonx) is IBM's cloud-based platform designed for commercial generative AI and scientific data. IBM Watsonx's three components - watsonx.ai, watsonx.data, and watsonx.governance - come together to create an end-to-end, trustworthy AI platform that can accelerate AI projects aimed at solving business problems. It provides powerful tools for building, training, and [deploying machine learning models](../guides/model-deployment-options.md) and makes it easy to connect with various data sources.
+[Watsonx](https://www.ibm.com/watsonx) is IBM's cloud-based platform designed for commercial [generative AI](https://www.ultralytics.com/glossary/generative-ai) and scientific data. IBM Watsonx's three components - watsonx.ai, watsonx.data, and watsonx.governance - come together to create an end-to-end, trustworthy AI platform that can accelerate AI projects aimed at solving business problems. It provides powerful tools for building, training, and [deploying machine learning models](../guides/model-deployment-options.md) and makes it easy to connect with various data sources.
 
 <p align="center">
-  <img width="800" src="https://cdn.stackoverflow.co/images/jo7n4k8s/production/48b67e6aec41f89031a3426cbd1f78322e6776cb-8800x4950.jpg?auto=format" alt="Overview of IBM Watsonx">
+  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/overview-of-ibm-watsonx.avif" alt="Overview of IBM Watsonx">
 </p>
 
-Its user-friendly interface and collaborative capabilities streamline the development process and help with efficient model management and deployment. Whether for computer vision, predictive analytics, natural language processing, or other AI applications, IBM Watsonx provides the tools and support needed to drive innovation.
+Its user-friendly interface and collaborative capabilities streamline the development process and help with efficient model management and deployment. Whether for computer vision, predictive analytics, [natural language processing](https://www.ultralytics.com/glossary/natural-language-processing-nlp), or other AI applications, IBM Watsonx provides the tools and support needed to drive innovation.
 
 ## Key Features of IBM Watsonx
 
@@ -56,7 +56,7 @@ Once you do so, a notebook environment will open for you to load your data set. 
 
 Next, you can install and import the necessary Python libraries.
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 
@@ -71,7 +71,7 @@ For detailed instructions and best practices related to the installation process
 
 Then, you can import the needed packages.
 
-!!! Example "Import Relevant Libraries"
+!!! example "Import Relevant Libraries"
 
     === "Python"
 
@@ -92,7 +92,7 @@ We can load the dataset directly into the notebook using the Kaggle API. First, 
 
 Copy and paste your Kaggle username and API key into the following code. Then run the code to install the API and load the dataset into Watsonx.
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 
@@ -103,7 +103,7 @@ Copy and paste your Kaggle username and API key into the following code. Then ru
 
 After installing Kaggle, we can load the dataset into Watsonx.
 
-!!! Example "Load the Data"
+!!! example "Load the Data"
 
     === "Python"
 
@@ -114,7 +114,7 @@ After installing Kaggle, we can load the dataset into Watsonx.
         os.environ["KAGGLE_KEY"] = "apiKey"
 
         # Load dataset
-        !kaggle datasets download atiqishrak/trash-dataset-icra19 --unzip
+        os.system("kaggle datasets download atiqishrak/trash-dataset-icra19 --unzip")
 
         # Store working directory path as work_dir
         work_dir = os.getcwd()
@@ -133,10 +133,10 @@ After loading the dataset, we printed and saved our working directory. We have a
 
 If you see "trash_ICRA19" among the directory's contents, then it has loaded successfully. You should see three files/folders: a `config.yaml` file, a `videos_for_testing` directory, and a `dataset` directory. We will ignore the `videos_for_testing` directory, so feel free to delete it.
 
-We will use the config.yaml file and the contents of the dataset directory to train our object detection model. Here is a sample image from our marine litter data set.
+We will use the config.yaml file and the contents of the dataset directory to train our [object detection](https://www.ultralytics.com/glossary/object-detection) model. Here is a sample image from our marine litter data set.
 
 <p align="center">
-  <img width="400" src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/sQy6asArOJ2weUuQ_POiVA.jpg" alt="Marine Litter with Bounding Box">
+  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/marine-litter-bounding-box.avif" alt="Marine Litter with Bounding Box">
 </p>
 
 ### Step 4: Preprocess the Data
@@ -144,18 +144,18 @@ We will use the config.yaml file and the contents of the dataset directory to tr
 Fortunately, all labels in the marine litter data set are already formatted as YOLO .txt files. However, we need to rearrange the structure of the image and label directories in order to help our model process the image and labels. Right now, our loaded data set directory follows this structure:
 
 <p align="center">
-  <img width="400" src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/VfgvRT7vdgkeTQNqVMs_CQ.png" alt="Loaded Dataset Directory">
+  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/marine-litter-bounding-box-1.avif" alt="Loaded Dataset Directory">
 </p>
 
 But, YOLO models by default require separate images and labels in subdirectories within the train/val/test split. We need to reorganize the directory into the following structure:
 
 <p align="center">
-  <img width="400" src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/uUk1YopS94mytGaCav3ZaQ.png" alt="Yolo Directory Structure">
+  <img width="400" src="https://github.com/ultralytics/docs/releases/download/0/yolo-directory-structure.avif" alt="Yolo Directory Structure">
 </p>
 
 To reorganize the data set directory, we can run the following script:
 
-!!! Example "Preprocess the Data"
+!!! example "Preprocess the Data"
 
     === "Python"
 
@@ -207,7 +207,7 @@ names:
 
 Run the following script to delete the current contents of config.yaml and replace it with the above contents that reflect our new data set directory structure. Be certain to replace the work_dir portion of the root directory path in line 4 with your own working directory path we retrieved earlier. Leave the train, val, and test subdirectory definitions. Also, do not change {work_dir} in line 23 of the code.
 
-!!! Example "Edit the .yaml File"
+!!! example "Edit the .yaml File"
 
     === "Python"
 
@@ -240,7 +240,7 @@ Run the following script to delete the current contents of config.yaml and repla
 
 Run the following command-line code to fine tune a pretrained default YOLOv8 model.
 
-!!! Example "Train the YOLOv8 model"
+!!! example "Train the YOLOv8 model"
 
     === "CLI"
 
@@ -250,11 +250,11 @@ Run the following command-line code to fine tune a pretrained default YOLOv8 mod
 
 Here's a closer look at the parameters in the model training command:
 
-- **task**: It specifies the computer vision task for which you are using the specified YOLO model and data set.
+- **task**: It specifies the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) task for which you are using the specified YOLO model and data set.
 - **mode**: Denotes the purpose for which you are loading the specified model and data. Since we are training a model, it is set to "train." Later, when we test our model's performance, we will set it to "predict."
 - **epochs**: This delimits the number of times YOLOv8 will pass through our entire data set.
-- **batch**: The numerical value stipulates the training batch sizes. Batches are the number of images a model processes before it updates its parameters.
-- **lr0**: Specifies the model's initial learning rate.
+- **batch**: The numerical value stipulates the training [batch sizes](https://www.ultralytics.com/glossary/batch-size). Batches are the number of images a model processes before it updates its parameters.
+- **lr0**: Specifies the model's initial [learning rate](https://www.ultralytics.com/glossary/learning-rate).
 - **plots**: Directs YOLO to generate and save plots of our model's training and evaluation metrics.
 
 For a detailed understanding of the model training process and best practices, refer to the [YOLOv8 Model Training guide](../modes/train.md). This guide will help you get the most out of your experiments and ensure you're using YOLOv8 effectively.
@@ -263,7 +263,7 @@ For a detailed understanding of the model training process and best practices, r
 
 We can now run inference to test the performance of our fine-tuned model:
 
-!!! Example "Test the YOLOv8 model"
+!!! example "Test the YOLOv8 model"
 
     === "CLI"
 
@@ -271,7 +271,7 @@ We can now run inference to test the performance of our fine-tuned model:
         !yolo task=detect mode=predict source={work_dir}/trash_ICRA19/dataset/test/images model={work_dir}/runs/detect/train/weights/best.pt conf=0.5 iou=.5 save=True save_txt=True
         ```
 
-This brief script generates predicted labels for each image in our test set, as well as new output image files that overlay the predicted bounding box atop the original image.
+This brief script generates predicted labels for each image in our test set, as well as new output image files that overlay the predicted [bounding box](https://www.ultralytics.com/glossary/bounding-box) atop the original image.
 
 Predicted .txt labels for each image are saved via the `save_txt=True` argument and the output images with bounding box overlays are generated through the `save=True` argument.  
 The parameter `conf=0.5` informs the model to ignore all predictions with a confidence level of less than 50%.
@@ -279,7 +279,7 @@ The parameter `conf=0.5` informs the model to ignore all predictions with a conf
 Lastly, `iou=.5` directs the model to ignore boxes in the same class with an overlap of 50% or greater. It helps to reduce potential duplicate boxes generated for the same object.  
 we can load the images with predicted bounding box overlays to view how our model performs on a handful of images.
 
-!!! Example "Display Predictions"
+!!! example "Display Predictions"
 
     === "Python"
 
@@ -294,25 +294,25 @@ The code above displays ten images from the test set with their predicted boundi
 
 ### Step 7: Evaluate the Model
 
-We can produce visualizations of the model's precision and recall for each class. These visualizations are saved in the home directory, under the train folder. The precision score is displayed in the P_curve.png:
+We can produce visualizations of the model's [precision](https://www.ultralytics.com/glossary/precision) and recall for each class. These visualizations are saved in the home directory, under the train folder. The precision score is displayed in the P_curve.png:
 
 <p align="center">
-  <img width="800" src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/EvQpqt4D6VI2And1T86Fww.png" alt="Precision Confidence Curve">
+  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/precision-confidence-curve.avif" alt="Precision Confidence Curve">
 </p>
 
-The graph shows an exponential increase in precision as the model's confidence level for predictions increases. However, the model precision has not yet leveled out at a certain confidence level after two epochs.
+The graph shows an exponential increase in precision as the model's confidence level for predictions increases. However, the model precision has not yet leveled out at a certain confidence level after two [epochs](https://www.ultralytics.com/glossary/epoch).
 
-The recall graph (R_curve.png) displays an inverse trend:
+The [recall](https://www.ultralytics.com/glossary/recall) graph (R_curve.png) displays an inverse trend:
 
 <p align="center">
-  <img width="800" src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/NS0pQDHuEWM-WlpBpxTydw.png" alt="Recall Confidence Curve">
+  <img width="800" src="https://github.com/ultralytics/docs/releases/download/0/recall-confidence-curve.avif" alt="Recall Confidence Curve">
 </p>
 
 Unlike precision, recall moves in the opposite direction, showing greater recall with lower confidence instances and lower recall with higher confidence instances. This is an apt example of the trade-off in precision and recall for classification models.
 
-### Step 8: Calculating Intersection Over Union
+### Step 8: Calculating [Intersection Over Union](https://www.ultralytics.com/glossary/intersection-over-union-iou)
 
-You can measure the prediction accuracy by calculating the IoU between a predicted bounding box and a ground truth bounding box for the same object. Check out [IBM's tutorial on training YOLOv8](https://developer.ibm.com/tutorials/awb-train-yolo-object-detection-model-in-python/) for more details.
+You can measure the prediction [accuracy](https://www.ultralytics.com/glossary/accuracy) by calculating the IoU between a predicted bounding box and a ground truth bounding box for the same object. Check out [IBM's tutorial on training YOLOv8](https://developer.ibm.com/tutorials/awb-train-yolo-object-detection-model-in-python/) for more details.
 
 ## Summary
 

@@ -6,7 +6,7 @@ keywords: What is Kaggle, What is Kaggle Used For, YOLOv8, Kaggle Machine Learni
 
 # A Guide on Using Kaggle to Train Your YOLOv8 Models
 
-If you are learning about AI and working on [small projects](../solutions/index.md), you might not have access to powerful computing resources yet, and high-end hardware can be pretty expensive. Fortunately, Kaggle, a platform owned by Google, offers a great solution. Kaggle provides a free, cloud-based environment where you can access GPU resources, handle large datasets, and collaborate with a diverse community of data scientists and machine learning enthusiasts.
+If you are learning about AI and working on [small projects](../solutions/index.md), you might not have access to powerful computing resources yet, and high-end hardware can be pretty expensive. Fortunately, Kaggle, a platform owned by Google, offers a great solution. Kaggle provides a free, cloud-based environment where you can access GPU resources, handle large datasets, and collaborate with a diverse community of data scientists and [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) enthusiasts.
 
 Kaggle is a great choice for [training](../guides/model-training-tips.md) and experimenting with [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics?tab=readme-ov-file) models. Kaggle Notebooks make using popular machine-learning libraries and frameworks in your projects easy. Let's explore Kaggle's main features and learn how you can train YOLOv8 models on this platform!
 
@@ -20,17 +20,17 @@ With more than [10 million users](https://www.kaggle.com/discussions/general/332
 
 Training YOLOv8 models on Kaggle is simple and efficient, thanks to the platform's access to powerful GPUs.
 
-To get started, access the [Kaggle YOLOv8 Notebook](https://www.kaggle.com/code/ultralytics/yolov8). Kaggle's environment comes with pre-installed libraries like TensorFlow and PyTorch, making the setup process hassle-free.
+To get started, access the [Kaggle YOLOv8 Notebook](https://www.kaggle.com/code/ultralytics/yolov8). Kaggle's environment comes with pre-installed libraries like [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) and [PyTorch](https://www.ultralytics.com/glossary/pytorch), making the setup process hassle-free.
 
-![What is the kaggle integration with respect to YOLOv8?](https://github.com/user-attachments/assets/4068b343-bb62-462c-9a44-b32413c4a765)
+![What is the kaggle integration with respect to YOLOv8?](https://github.com/ultralytics/docs/releases/download/0/kaggle-integration-yolov8.avif)
 
 Once you sign in to your Kaggle account, you can click on the option to copy and edit the code, select a GPU under the accelerator settings, and run the notebook's cells to begin training your model. For a detailed understanding of the model training process and best practices, refer to our [YOLOv8 Model Training guide](../modes/train.md).
 
-![Using kaggle for machine learning model training with a GPU](https://github.com/user-attachments/assets/264f01b9-207b-4a8d-be5d-7b51739e9726)
+![Using kaggle for machine learning model training with a GPU](https://github.com/ultralytics/docs/releases/download/0/using-kaggle-for-machine-learning-model-training-with-a-gpu.avif)
 
 On the [official YOLOv8 Kaggle notebook page](https://www.kaggle.com/code/ultralytics/yolov8), if you click on the three dots in the upper right-hand corner, you'll notice more options will pop up.
 
-![Overview of Options From the Official YOLOv8 Kaggle Notebook Page](https://github.com/user-attachments/assets/bca100a6-fae8-433d-8dfd-1ecf4cc4f691)
+![Overview of Options From the Official YOLOv8 Kaggle Notebook Page](https://github.com/ultralytics/docs/releases/download/0/overview-options-yolov8-kaggle-notebook.avif)
 
 These options include:
 
